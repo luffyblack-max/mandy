@@ -1,0 +1,1210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Manshiya Rameshkumar - Leading Gynecologist & Obstetrician in Virudunagar</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* General styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: #495057; /* Darker, softer grey */
+            background: #f8f9fa; /* Very light grey */
+            overflow-x: hidden; /* Prevent horizontal scroll due to animations */
+        }
+
+       
+         /* Loading Screen with Crawling Baby */
+        .loading-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #e8f4f8 0%, #f4e8f8 50%, #fff5e6 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.8s ease, visibility 0.8s ease;
+        }
+
+        .loading-screen.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .crawling-baby {
+            width: 100px;
+            height: 100px;
+            position: relative;
+            animation: crawl 2s ease-in-out infinite;
+        }
+
+        .baby-body {
+            width: 60px;
+            height: 40px;
+            background: #ffb3ba;
+            border-radius: 50% 50% 40% 40%;
+            position: absolute;
+            top: 30px;
+            left: 20px;
+            animation: bodyBounce 2s ease-in-out infinite;
+        }
+
+        .baby-head {
+            width: 40px;
+            height: 40px;
+            background: #ffdfba;
+            border-radius: 50%;
+            position: absolute;
+            top: 10px;
+            left: 30px;
+            animation: headBob 2s ease-in-out infinite;
+        }
+
+        .baby-arm {
+            width: 15px;
+            height: 25px;
+            background: #ffdfba;
+            border-radius: 50%;
+            position: absolute;
+        }
+
+        .baby-arm.left {
+            top: 35px;
+            left: 10px;
+            animation: leftArm 2s ease-in-out infinite;
+        }
+
+        .baby-arm.right {
+            top: 35px;
+            right: 10px;
+            animation: rightArm 2s ease-in-out infinite;
+        }
+
+        .baby-leg {
+            width: 12px;
+            height: 20px;
+            background: #ffdfba;
+            border-radius: 50%;
+            position: absolute;
+            bottom: 5px;
+        }
+
+        .baby-leg.left {
+            left: 25px;
+            animation: leftLeg 2s ease-in-out infinite;
+        }
+
+        .baby-leg.right {
+            right: 25px;
+            animation: rightLeg 2s ease-in-out infinite;
+        }
+
+        .loading-text {
+            margin-top: 2rem;
+            font-size: 1.2rem;
+            color: #8b4d8f;
+            font-weight: 600;
+            animation: pulse 1.5s ease-in-out infinite;
+        }
+
+        .loading-dots {
+            margin-top: 1rem;
+        }
+
+        .dot {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #ff8ba3;
+            margin: 0 4px;
+            animation: dotBounce 1.4s ease-in-out infinite both;
+        }
+
+        .dot:nth-child(1) { animation-delay: -0.32s; }
+        .dot:nth-child(2) { animation-delay: -0.16s; }
+
+        @keyframes crawl {
+            0%, 100% { transform: translateX(0); }
+            50% { transform: translateX(20px); }
+        }
+
+        @keyframes bodyBounce {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            25% { transform: translateY(-3px) rotate(-2deg); }
+            75% { transform: translateY(-3px) rotate(2deg); }
+        }
+
+        @keyframes headBob {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+
+        @keyframes leftArm {
+            0%, 100% { transform: rotate(0deg); }
+            50% { transform: rotate(-30deg); }
+        }
+
+        @keyframes rightArm {
+            0%, 100% { transform: rotate(0deg); }
+            50% { transform: rotate(30deg); }
+        }
+
+        @keyframes leftLeg {
+            0%, 100% { transform: rotate(0deg); }
+            25% { transform: rotate(-15deg); }
+            75% { transform: rotate(15deg); }
+        }
+
+        @keyframes rightLeg {
+            0%, 100% { transform: rotate(0deg); }
+            25% { transform: rotate(15deg); }
+            75% { transform: rotate(-15deg); }
+        }
+
+        @keyframes dotBounce {
+            0%, 80%, 100% { transform: scale(0); }
+            40% { transform: scale(1); }
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.6; }
+        }
+
+                /* Maternal Color Psychology - Soft, nurturing colors */
+        :root {
+            --maternal-pink: #f8e8e8;
+            --warm-coral: #ff8ba3;
+            --gentle-lavender: #e8d8f5;
+            --soft-mint: #e8f5e8;
+            --warm-peach: #fff5e6;
+            --deep-rose: #8b4d8f;
+            --nurturing-blue: #7fb3d3;
+            --comfort-cream: #faf8f5;
+        }
+
+
+        /* Loading Overlay */
+        #loading-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #f0f8ff; /* A very light, calming blue */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            opacity: 1;
+            transition: opacity 0.8s ease-out, visibility 0.8s ease-out;
+            visibility: visible;
+        }
+
+        #loading-overlay.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        #crawler {
+            width: 50px;
+            height: 30px;
+            background-color: #e0f2f7; /* Slightly darker shade of blue */
+            border-radius: 50% 50% 10% 10%; /* More like a baby bottom */
+            margin-bottom: 20px;
+            position: absolute; /* Allows movement */
+            left: -50px; /* Start off-screen */
+            animation: crawl 3s ease-in-out infinite; /* Continuous crawl */
+        }
+
+        @keyframes crawl {
+            0% { transform: translateX(0) translateY(0); }
+            25% { transform: translateX(20vw) translateY(-5px); }
+            50% { transform: translateX(40vw) translateY(0); }
+            75% { transform: translateX(60vw) translateY(5px); }
+            100% { transform: translateX(100vw) translateY(0); }
+        }
+
+        .loading-text {
+            color: #777;
+            font-size: 1.1rem;
+            position: relative;
+            z-index: 10000; /* Ensure text is above crawler if needed */
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #a78bfa 0%, #d8b4fe 100%); /* Soft lavender gradient */
+            color: #495057; /* Dark grey text */
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08); /* Softer shadow */
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-decoration: none;
+            color: #495057; /* Dark grey logo */
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: #6c757d; /* Medium grey links */
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #007bff; /* A more approachable blue */
+            transform: translateY(-2px);
+        }
+
+        .cta-button {
+            background: #28a745; /* Calming green for action */
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3);
+        }
+
+        .cta-button:hover {
+            background: #218838;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(40, 167, 69, 0.4);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #e0f7fa 0%, #ccebff 100%); /* Very light blue gradient */
+            color: #495057;
+            padding: 120px 0 80px;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="0.5" fill="black" opacity="0.05"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+            background: linear-gradient(45deg, #495057, #007bff); /* Dark grey to blue */
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-content p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #007bff; /* Approachable blue */
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: #28a745; /* Calming green */
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 6px 20px rgba(40, 167, 69, 0.3);
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary:hover {
+            background: #218838;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(40, 167, 69, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: #007bff; /* Approachable blue */
+            padding: 1rem 2rem;
+            border: 2px solid #007bff;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+        }
+
+        .btn-secondary:hover {
+            background: #007bff;
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        .hero-image {
+            position: relative;
+        }
+
+        .doctor-image {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            margin: 0 auto;
+            display: block;
+        }
+
+        /* Trust Indicators */
+        .trust-section {
+            background: #f8f9fa; /* Very light grey */
+            padding: 4rem 0;
+        }
+
+        .trust-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            text-align: center;
+        }
+
+        .trust-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .trust-item {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .trust-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .trust-icon {
+            font-size: 3rem;
+            color: #a78bfa; /* Soft lavender */
+            margin-bottom: 1rem;
+        }
+
+        .trust-item h3 {
+            color: #495057; /* Dark grey */
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 6rem 0;
+            background: white;
+        }
+
+        .services-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            color: #495057; /* Dark grey */
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .section-header p {
+            font-size: 1.2rem;
+            color: #6c757d; /* Medium grey */
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: linear-gradient(135deg, #a78bfa 0%, #d8b4fe 100%); /* Soft lavender gradient */
+            color: white;
+            padding: 2.5rem;
+            border-radius: 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            transition: all 0.3s ease;
+            transform: scale(0);
+        }
+
+        .service-card:hover::before {
+            transform: scale(1);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(167, 139, 250, 0.3);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .service-card p {
+            opacity: 0.9;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            background: #f8f9fa; /* Very light grey */
+            padding: 6rem 0;
+        }
+
+        .testimonials-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .testimonial-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            position: relative;
+        }
+
+        .testimonial-card::before {
+            content: '"';
+            font-size: 4rem;
+            color: #a78bfa; /* Soft lavender */
+            position: absolute;
+            top: 1rem;
+            left: 2rem;
+            opacity: 0.3;
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            color: #545b62; /* Slightly darker grey */
+            line-height: 1.6;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #a78bfa, #d8b4fe); /* Soft lavender gradient */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+
+        .author-info h4 {
+            color: #495057; /* Dark grey */
+            margin-bottom: 0.25rem;
+        }
+
+        .author-info p {
+            color: #6c757d; /* Medium grey */
+            font-size: 0.9rem;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, #a78bfa 0%, #d8b4fe 100%); /* Soft lavender gradient */
+            color: #495057; /* Dark grey text */
+            padding: 6rem 0;
+            text-align: center;
+        }
+
+        .cta-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+            color: #495057; /* Dark grey */
+        }
+
+        .cta-section p {
+            font-size: 1.25rem;
+            margin-bottom: 2.5rem;
+            opacity: 1;
+            color: #6c757d; /* Medium grey */
+        }
+
+        .contact-form {
+            background: rgba(255,255,255,0.8); /* Lighter background for form */
+            padding: 2.5rem;
+            border-radius: 20px;
+            backdrop-filter: blur(5px);
+            margin-top: 3rem;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 1rem;
+            border: 1px solid #ced4da; /* Light grey border */
+            border-radius: 10px;
+            background: white;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            color: #495057; /* Dark grey text */
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            background: white;
+            box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25); /* Approachable blue focus */
+            border-color: #007bff;
+        }
+
+        .form-group textarea {
+            height: 120px;
+            resize: vertical;
+        }
+
+        /* Contact Info */
+        .contact-info {
+            background: #f8f9fa; /* Very light grey */
+            padding: 4rem 0;
+        }
+
+        .contact-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .contact-item {
+            text-align: center;
+            padding: 2rem;
+            border-radius: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover {
+            background: #e9ecef; /* Slightly darker light grey on hover */
+            transform: translateY(-5px);
+        }
+
+        .contact-item i {
+            font-size: 2.5rem;
+            color: #a78bfa; /* Soft lavender */
+            margin-bottom: 1rem;
+        }
+
+        .contact-item h3 {
+            color: #495057; /* Dark grey */
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-item p {
+            color: #6c757d; /* Medium grey */
+        }
+
+        /* Footer */
+        .footer {
+            background: #343a40; /* Dark grey footer */
+            color: #f8f9fa; /* Very light grey text */
+            padding: 3rem 0 1rem;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            text-align: center;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: #adb5bd; /* Light grey links */
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: #a78bfa; /* Soft lavender */
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background: #a78bfa; /* Soft lavender */
+            color: white;
+            border-radius: 50%;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background: #28a745; /* Calming green */
+            transform: translateY(-3px);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-stats {
+                justify-content: center;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            /* Adjust crawler for smaller screens */
+            @keyframes crawl {
+                0% { transform: translateX(0) translateY(0); }
+                25% { transform: translateX(25vw) translateY(-5px); }
+                50% { transform: translateX(50vw) translateY(0); }
+                75% { transform: translateX(75vw) translateY(5px); }
+                100% { transform: translateX(100vw) translateY(0); }
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        /* Floating elements */
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+    </style>
+</head>
+<body>
+    <div id="loading-overlay">
+        <div id="crawler"></div>
+        <div class="loading-text">Bringing compassionate care to you...</div>
+    </div>
+
+    <header class="header">
+        <nav class="nav-container">
+            <a href="#" class="logo">Dr. Manshiya Rameshkumar</a>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#testimonials">Reviews</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <a href="#appointment" class="cta-button">Book Appointment</a>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content fade-in-up">
+                <h1>Leading Gynecologist & Obstetrician in Virudunagar</h1>
+                <p>Comprehensive women's healthcare with 19+ years of expertise. Specialized in high-risk pregnancy, infertility treatment, PCOD/PCOS, and advanced gynecological procedures.</p>
+                
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number">19+</span>
+                        <span class="stat-label">Years Experience</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">5000+</span>
+                        <span class="stat-label">Happy Patients</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">98%</span>
+                        <span class="stat-label">Success Rate</span>
+                    </div>
+                </div>
+
+                <div class="hero-buttons">
+                    <a href="#appointment" class="btn-primary">Book Consultation</a>
+                    <a href="#services" class="btn-secondary">View Services</a>
+                </div>
+            </div>
+            
+            <div class="hero-image fade-in-up">
+                <img src="download.png" alt="Dr. Manshiya Rameshkumar" class="doctor-image floating">
+            </div>
+        </div>
+    </section>
+
+    <section class="trust-section">
+        <div class="trust-container">
+            <h2>Why Choose Dr. Manshiya Rameshkumar?</h2>
+            <div class="trust-grid">
+                <div class="trust-item">
+                    <div class="trust-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <h3>Expert Care</h3>
+                    <p>19+ years of specialized experience in gynecology and obstetrics with advanced training in high-risk pregnancies.</p>
+                </div>
+                <div class="trust-item">
+                    <div class="trust-icon">
+                        <i class="fas fa-hospital"></i>
+                    </div>
+                    <h3>Modern Facility</h3>
+                    <p>State-of-the-art clinic in Dubai kurkku theru, Virudunagar with latest equipment and comfortable environment.</p>
+                </div>
+                <div class="trust-item">
+                    <div class="trust-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3>Compassionate Care</h3>
+                    <p>Personalized treatment approach with emphasis on patient comfort and emotional well-being.</p>
+                </div>
+                <div class="trust-item">
+                    <div class="trust-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>Flexible Hours</h3>
+                    <p>Convenient appointment scheduling including evening and weekend slots for working women.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="services">
+        <div class="services-container">
+            <div class="section-header">
+                <h2>Comprehensive Women's Health Services</h2>
+                <p>From routine checkups to specialized treatments, we provide complete gynecological and obstetric care under one roof.</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-baby"></i>
+                    </div>
+                    <h3>Pregnancy & Delivery</h3>
+                    <p>Complete prenatal care, high-risk pregnancy management, normal & cesarean deliveries, and water birthing options.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-heartbeat"></i>
+                    </div>
+                    <h3>PCOD/PCOS Treatment</h3>
+                    <p>Comprehensive management of hormonal disorders including lifestyle counseling, medication, and surgical options.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-seedling"></i>
+                    </div>
+                    <h3>Infertility Treatment</h3>
+                    <p>Advanced fertility treatments including IVF consultation, ovulation induction, and reproductive health optimization.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-stethoscope"></i>
+                    </div>
+                    <h3>General Gynecology</h3>
+                    <p>Routine health checkups, contraception counseling, menopause management, and preventive care.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-cut"></i>
+                    </div>
+                    <h3>Minimally Invasive Surgery</h3>
+                    <p>Laparoscopic procedures, hysterectomy, ovarian cyst removal, and other advanced surgical treatments.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-spa"></i>
+                    </div>
+                    <h3>Cosmetic Gynecology</h3>
+                    <p>Vaginal tightening, intimate wellness procedures, and aesthetic gynecological treatments.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonials" class="testimonials">
+        <div class="testimonials-container">
+            <div class="section-header">
+                <h2>What Our Patients Say</h2>
+                <p>Real experiences from women who trusted us with their healthcare journey.</p>
+            </div>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"Dr. Manshiya Rameshkumar made my high-risk pregnancy journey smooth and stress-free. Her expertise and caring nature gave me confidence throughout. My baby is healthy and I couldn't be more grateful."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">P</div>
+                        <div class="author-info">
+                            <h4>Priya </h4>
+                            <p>New Mother</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"After struggling with PCOS for years, Dr. Manshiya treatment plan helped me manage my symptoms effectively. She explained everything clearly and the results have been amazing."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">A</div>
+                        <div class="author-info">
+                            <h4>Anita </h4>
+                            <p>PCOS Patient</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"The clinic environment is so comfortable and Dr. Manshiya is incredibly patient. She took time to address all my concerns and the treatment was successful. Highly recommended!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">R</div>
+                        <div class="author-info">
+                            <h4>Radhika </h4>
+                            <p>Regular Patient</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="appointment" class="cta-section">
+        <div class="cta-container">
+            <h2>Ready to Take Control of Your Health?</h2>
+            <p>Book your consultation today and experience compassionate, expert care that puts your wellness first.</p>
+            
+            <div class="contact-form">
+                <h3 style="margin-bottom: 2rem; color: #495057;">Quick Appointment Booking</h3>
+                <form>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <input type="text" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" placeholder="Phone Number" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <input type="email" placeholder="Email Address">
+                        </div>
+                        <div class="form-group">
+                            <select required>
+                                <option value="">Select Service</option>
+                                <option value="consultation">General Consultation</option>
+                                <option value="pregnancy">Pregnancy Care</option>
+                                <option value="pcod">PCOD/PCOS Treatment</option>
+                                <option value="infertility">Infertility Treatment</option>
+                                <option value="surgery">Surgical Consultation</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <textarea placeholder="Brief description of your concern (optional)"></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn-primary" style="width: 100%; margin-top: 1rem;">
+                        Book My Appointment
+                    </button>
+                </form>
+            </div>
+            
+            <div style="margin-top: 2rem;">
+                <p><strong>Or call directly:</strong> <a href="tel:+911234567899" style="color: #007bff; text-decoration: none; font-weight: bold;">+91 1234567899</a></p>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-info">
+        <div class="contact-container">
+            <div class="contact-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <h3>Visit Our Clinic</h3>
+                <p>A-4/5, Dubai kurukku theru,<br>Sector 26, Virudunagar,<br>TamilNadu 622002</p>
+            </div>
+            
+            <div class="contact-item">
+                <i class="fas fa-phone"></i>
+                <h3>Call Us</h3>
+                <p>+91 1234567899</p>
+                <p>Mon-Sat: 9:00 AM - 7:00 PM</p>
+            </div>
+            
+            <div class="contact-item">
+                <i class="fas fa-envelope"></i>
+                <h3>Email Us</h3>
+                <p>info@drmanshiya.com</p>
+                <p>response within 24 hours</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-links">
+                <a href="#home">Home</a>
+                <a href="#services">Services</a>
+                <a href="#about">About</a>
+                <a href="#testimonials">Reviews</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+            <p>&copy; 2025 Dr. Manshiya Rameshkumar. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // JavaScript for the loading animation and hiding the overlay
+        document.addEventListener('DOMContentLoaded', function() {
+            const loadingOverlay = document.getElementById('loading-overlay');
+            const crawler = document.getElementById('crawler');
+
+            // Optional: Remove the crawler animation after a short delay
+            // This prevents the animation from running indefinitely in the background
+            setTimeout(() => {
+                crawler.style.animation = 'none'; // Stop the CSS animation
+            }, 3000); // Stop after 3 seconds
+
+            // Hide the loading overlay when the entire page content is loaded
+            window.addEventListener('load', function() {
+                loadingOverlay.classList.add('hidden');
+            });
+
+            // For demonstration/testing, you can also hide it after a fixed time
+            // In a real application, rely on 'load' event for best user experience
+            // setTimeout(() => {
+            //     loadingOverlay.classList.add('hidden');
+            // }, 3000); // Hide after 3 seconds even if not fully loaded
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
